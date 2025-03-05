@@ -1,0 +1,24 @@
+<h2>Strings</h2>
+<!-- Affichages -->
+<p>Affichage brut : {{ charString }}</p>
+<p>Affichage en minuscule : {{ charString | lowercase }}</p>
+<p>Affichage en majuscule : {{ charString | uppercase }}</p>
+<p>Affichage en titre (CSS capitalize) : {{ charString | titlecase }}</p>
+<!-- Liens -->
+<!-- permet d'éviter injeection d'html ou de script -->
+<p>Echappement auto: {{ html }}</p>
+<!-- Si on veut le lein et non la string décrite -->
+<p [innerHTML]="html"></p>
+
+<h2>Nombres</h2>
+<p>Affichage du nombre : {{ num }}</p>
+<!-- Nécessite d'importer les locales fr globalement dans main.ts -->
+<p>Affichage formaté : {{ num | number : "0.0-2" : "fr-BE" }}</p>
+
+<h2>Dates</h2>
+<p>Affichage brut : {{ date }}</p>
+<p>
+  Affichage formaté :
+  {{ date | date : "le dd MMMM yyyy" : undefined : "fr-BE" }}
+</p>
+<p>Affichage formaté : {{ date | date : "dd/MM/yyyy" }}</p>

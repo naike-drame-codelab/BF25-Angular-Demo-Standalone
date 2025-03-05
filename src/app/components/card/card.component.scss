@@ -1,0 +1,19 @@
+.card {
+  width: 100%;
+  box-shadow: 5px 5px 15px 0 #ccc;
+  margin: 5px;
+  max-height: 30%;
+  
+  .card-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+  .card-content {
+    padding: 5px;
+    .card-title {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+  }
+}

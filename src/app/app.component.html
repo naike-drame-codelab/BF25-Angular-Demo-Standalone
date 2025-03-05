@@ -1,0 +1,18 @@
+<!--  Contenu commun des pages - Header -->
+<header>Demo Angular Standalone</header>
+<nav>
+  <ul>
+    @for(r of navRoutes; track $index){ @if(r.show){
+
+    <li>
+      <a [routerLink]="r.path">{{ r.title }}</a>
+    </li>
+    } }
+  </ul>
+</nav>
+
+<!-- Les pages s'afficheront ici -->
+<router-outlet></router-outlet>
+
+<!--  Contenu commun des pages - Footer -->
+<footer>&copy; 2025 - Digital City</footer>

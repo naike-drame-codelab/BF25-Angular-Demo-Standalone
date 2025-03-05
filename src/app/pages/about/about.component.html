@@ -22,3 +22,17 @@
   {{ date | date : "le dd MMMM yyyy" : undefined : "fr-BE" }}
 </p>
 <p>Affichage formaté : {{ date | date : "dd/MM/yyyy" }}</p>
+
+<h2>Boucles</h2>
+@for(item of array; track $index){
+<p>{{ item }}</p>
+}
+
+<h2>Custom Pipes</h2>
+<p>Affichage brut : {{ charString2 }}</p>
+<p>Affichage customisé avec kebab-case.pipe : {{ charString2 | kebabCase }}</p>
+@for(item of array | sliceArray : 2; track $index){
+<p>{{ item }}</p>
+}
+
+<button (click)="method()"></button>

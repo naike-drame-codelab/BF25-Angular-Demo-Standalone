@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CardComponent } from '../../components/card/card.component';
 import { CardModel } from '../../models/card.model';
+import { ChronometerComponent } from '../../components/chronometer/chronometer.component';
 
 @Component({
   selector: 'app-home',
-  imports: [CardComponent],
+  imports: [CardComponent, ChronometerComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })

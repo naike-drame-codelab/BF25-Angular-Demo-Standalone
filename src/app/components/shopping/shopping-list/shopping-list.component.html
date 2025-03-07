@@ -1,0 +1,22 @@
+<section class="cart">
+  @for (item of productsList; track $index){
+  <div class="cart-item">
+    <p>
+      {{ item.productName }}
+      @if(item.isImportant){
+      <span>⚠</span>
+      }
+    </p>
+
+    <button (click)="delete(item)" class="delete-btn">❌</button>
+
+    @if(item.showConfirm){
+    <app-confirm-box
+      (onResponse)="confirmDelete($event, item)"
+      message="Voulez-vous vraiment supprimer ce produit ? "
+    >
+    </app-confirm-box>
+    }
+  </div>
+  }
+</section>

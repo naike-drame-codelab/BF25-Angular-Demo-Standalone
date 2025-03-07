@@ -2,8 +2,22 @@
   <h3>Timer</h3>
   <p>{{ ms | toTime }}</p>
   <div class="timer-btn-container">
-    <button [disabled]="idInterval" (click)="start()" class="btn-start">Start</button>
-    <button [disabled]="!idInterval" (click)="stop()" class="btn-stop">Stop</button>
-    <button [disabled]="ms === 0" (click)="reset()" class="btn-reset">Reset</button>
+    <button [disabled]="idInterval" (click)="start()" class="btn-start">
+      Start
+    </button>
+    <button [disabled]="!idInterval" (click)="stop()" class="btn-stop">
+      Stop
+    </button>
+    <button [disabled]="ms === 0" (click)="reset()" class="btn-reset">
+      Reset
+    </button>
   </div>
 </div>
+
+@if(showConfirmBox){
+<app-confirm-box
+  (onResponse)="confirmReset($event)"
+  message="Voulez-vous vraiment réinitialiser le chrono ? "
+>
+</app-confirm-box>
+}

@@ -1,0 +1,20 @@
+<h2>Calcul du BMI</h2>
+<div class="form">
+  <!-- Syntaxe complète -->
+  <!-- <input type="number" [ngModel]="height" (ngModelChange)="height" placeholder="Taille (cm)">
+    <input type="number" [ngModel]="weight" (ngModelChange)="weight" placeholder="Taille (cm)"> -->
+
+  <!-- Raccourci bindant l'input/output d'un élément -->
+  <input 
+        type="number" 
+        [ngModel]="height" 
+        (ngModelChange)="height = $event" 
+        placeholder="Taille (cm)">
+  <input
+    type="number"
+    [(ngModel)]="weight"
+    placeholder="Poids (kg)"
+    name="weight"
+  />
+</div>
+<p>Votre BMI : {{ bmi | number : "0.0-2" : 'fr-BE' }}.</p>

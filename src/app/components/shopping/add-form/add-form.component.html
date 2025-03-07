@@ -1,0 +1,10 @@
+<form [formGroup]="addForm" (submit)="add()">
+  <input
+    type="text"
+    formControlName="productName"
+    placeholder="Nom du produit"
+  />
+  <label for="isImportant">Important</label>
+  <input type="checkbox" formControlName="isImportant" />
+  <button type="submit" [disabled]="addForm.invalid">➕</button>
+</form>

@@ -1,0 +1,37 @@
+<div>
+  <input type="text" [(ngModel)]="articleName" />
+  <input type="checkbox" [(ngModel)]="articleIsImportant" />
+  <button (click)="add()">Ajouter</button>
+</div>
+
+<ul>
+  @for(item of list; track $index) {
+  <ng-container
+    [ngTemplateOutlet]="myTemplate"
+    [ngTemplateOutletContext]="{
+    item,
+    dialog: {isVisible: false}
+  }"
+  ></ng-container>
+
+  <!-- [visible]="false"  -->
+
+  }
+</ul>
+
+<ng-template #myTemplate let-item="item" let-dialog="dialog">
+  <li>
+    <p>
+      {{ item.name }}
+      @if(item.isImportant){
+      <span>⚠</span>
+      }
+    </p>
+    <button (click)="dialog.isVisible = true">🗑</button>
+  </li>
+  <!-- [visible]="dialog.isVisible" -->
+  <app-confirm-box
+    message="Confirmer la suppression de cet élément"
+    (onResponse)="dialog.isVisible = false; delete($event, item)"
+  ></app-confirm-box>
+</ng-template>

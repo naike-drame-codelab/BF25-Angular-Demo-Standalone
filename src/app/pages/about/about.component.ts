@@ -4,7 +4,6 @@ import { KebabCasePipe } from '../../pipes/kebab-case.pipe';
 import { SlicePipe } from '../../pipes/slice.pipe';
 
 @Component({
-  selector: 'app-about',
   imports: [CommonModule, KebabCasePipe, SlicePipe], //[UpperCasePipe, LowerCasePipe, TitleCasePipe, DatePipe, CurrencyPipe, DecimalPipe]
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',

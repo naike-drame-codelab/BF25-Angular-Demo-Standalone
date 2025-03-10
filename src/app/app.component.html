@@ -1,27 +1,30 @@
 <!--  Contenu commun des pages - Header -->
 <header>
   Demo Angular Standalone
-  <p>{{temp}} °C</p>
+  <p>{{ temp }} °C</p>
   <p>
     {{ listCourseService.list().length }} élément(s) dans la liste de courses
   </p>
   <button (click)="listCourseService.clear()">Tout effacer</button>
 </header>
-<nav>
-  <ul>
-    @for(r of navRoutes; track $index){ @if(r.show){
 
-    <li>
-      <a [routerLink]="r.path">{{ r.title }}</a>
-    </li>
-    } }
-  </ul>
-</nav>
-<hr>
+<div class="flex">
+  <nav>
+    <ul>
+      @for(r of navRoutes; track $index){ @if(r.show){
 
-<!-- Les pages s'afficheront ici -->
-<router-outlet></router-outlet>
+      <li>
+        <a [routerLink]="r.path">{{ r.title }}</a>
+      </li>
+      } }
+    </ul>
+  </nav>
 
-<hr>
-<!--  Contenu commun des pages - Footer -->
-<footer>&copy; 2025 - Digital City</footer>
+  <main>
+    <!-- Les pages s'afficheront ici -->
+    <router-outlet></router-outlet>
+
+    <!--  Contenu commun des pages - Footer -->
+    <footer>&copy; 2025 - Digital City</footer>
+  </main>
+</div>

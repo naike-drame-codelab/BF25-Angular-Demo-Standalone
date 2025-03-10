@@ -27,7 +27,7 @@ export class ListCourseService {
     //modifier complètement :
     // list.set(/*nouvelle liste*/ [])
 
-    // modifier en focntion des anciennes valeurs
+    // modifier en fonction des anciennes valeurs
     this.list.update((old) => [...old, article]);
   }
 

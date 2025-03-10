@@ -1,5 +1,12 @@
 <!--  Contenu commun des pages - Header -->
-<header>Demo Angular Standalone</header>
+<header>
+  Demo Angular Standalone
+  <p>{{temp}} °C</p>
+  <p>
+    {{ listCourseService.list().length }} élément(s) dans la liste de courses
+  </p>
+  <button (click)="listCourseService.clear()">Tout effacer</button>
+</header>
 <nav>
   <ul>
     @for(r of navRoutes; track $index){ @if(r.show){
@@ -10,9 +17,11 @@
     } }
   </ul>
 </nav>
+<hr>
 
 <!-- Les pages s'afficheront ici -->
 <router-outlet></router-outlet>
 
+<hr>
 <!--  Contenu commun des pages - Footer -->
 <footer>&copy; 2025 - Digital City</footer>

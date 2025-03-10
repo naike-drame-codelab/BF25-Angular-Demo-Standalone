@@ -12,12 +12,13 @@ export class ConfirmBoxComponent {
   // @Input()
   // message!: string;
   message = input.required<string>();
+  visible = input.required<boolean>();
 
   // Ancienne syntaxe :
   // @Output()
   // onResponse: EventEmitter<boolean> = new EventEmitter();
   onResponse = output<boolean>();
-  visible = input.required<boolean>;
+  
   visibleChange = output<boolean>();
 
   cancel() {

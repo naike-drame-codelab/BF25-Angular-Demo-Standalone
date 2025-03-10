@@ -16,6 +16,7 @@
 
 @if(showConfirmBox){
 <app-confirm-box
+  [visible]="true"
   (onResponse)="confirmReset($event)"
   message="Voulez-vous vraiment réinitialiser le chrono ? "
 >

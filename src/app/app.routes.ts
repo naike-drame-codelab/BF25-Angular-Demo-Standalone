@@ -4,6 +4,7 @@ import { NavRoutes } from './types/nav-routes';
 import { BmiComponent } from './pages/bmi/bmi.component';
 import { ShoppingComponent } from './pages/shopping/shopping.component';
 import { CorrectionComponent } from './pages/correction/correction.component';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
 
 export const routes: NavRoutes = [
   {
@@ -34,6 +35,12 @@ export const routes: NavRoutes = [
     path: 'correction',
     component: CorrectionComponent,
     title: 'Correction - Liste de courses',
+    show: true,
+  },
+  {
+    path: 'productpage',
+    component: ProductPageComponent,
+    title: 'API - Nutriscore & Allergènes',
     show: true,
   },
 ];

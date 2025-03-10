@@ -11,11 +11,11 @@
     <button (click)="delete(item)" class="delete-btn">❌</button>
 
     @if(item.showConfirm){
-    <app-confirm-box
-      (onResponse)="confirmDelete($event, item)"
-      message="Voulez-vous vraiment supprimer ce produit ? "
-    >
-    </app-confirm-box>
+      <app-confirm-box 
+      [visible]="true"
+      message="Confirmer la suppression de cet élément"
+      (onResponse)="delete(item)"
+  ></app-confirm-box>
     }
   </div>
   }

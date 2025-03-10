@@ -40,7 +40,7 @@ export class ChronometerComponent {
   }
 
   confirmReset(ok: boolean) {
-    this.showConfirmBox = false;
+    //this.showConfirmBox = false;
     if (ok) {
       this.stop();
       this.ms = 0;
